@@ -502,5 +502,10 @@ namespace Photon.Pun
         {
             return string.Format("View {0}{3} on {1} {2}", this.ViewID, (this.gameObject != null) ? this.gameObject.name : "GO==null", (this.IsSceneView) ? "(scene)" : string.Empty, this.Prefix > 0 ? "lvl"+this.Prefix : "");
         }
-    }
+
+		public void RPC(string v, object all, Vector3 vector3, float bashForce)
+		{
+			throw new NotImplementedException();
+		}
+	}
 }

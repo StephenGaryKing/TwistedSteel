@@ -20,10 +20,17 @@ public class DebugUI : MonoBehaviour
 		m_textBox.text = "";
 	}
 
-	public void Log(string text, bool addNewLine = true)
+	public static void Log(string text, bool addNewLine = true)
 	{
-		Debug.Log(text);
-		m_textBox.text += text;
-		if (addNewLine) m_textBox.text += "\n";
+		if (text != null)
+		{
+			Debug.Log(text);
+			Instance.m_textBox.text += text;
+			if (addNewLine) Instance.m_textBox.text += "\n";
+		}
+		else
+		{
+			Log("NULL ERROR");
+		}
 	}
 }
